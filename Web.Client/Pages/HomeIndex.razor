@@ -1,14 +1,15 @@
 ﻿@attribute [Route(Routes.Home)]
 
+<h4 class="mt-3 mb-3">Jsem Adam, umělá inteligence postavená jako ukázka Azure OpenAI technologie. Odpovídám na otázky o společnosti HAVIT.</h4>
 <HxRepeater Data="messages">
 	<ItemTemplate Context="item">
 		@if (item.Role == Contracts.Chat.ChatRoleStub.Assistant)
 		{
-			<div class="assistant-message">A: @item.Content</div>
+			<p class="assistant-message">A: @item.Content</p>
 		}
 		else // user message
 		{
-			<div class="user-message">Q: @item.Content</div>
+			<p class="user-message">Q: @item.Content</p>
 		}
 	</ItemTemplate>
 </HxRepeater>
@@ -16,5 +17,5 @@
 <EditForm Model="@userMessageFormModel">
 	<DataAnnotationsValidator />
 	<HxInputText @ref="userMessageInputTextComponent" @bind-Value="userMessageFormModel.MessageText" />
-	<HxSubmit Text="Send" OnValidClick="HandleValidSubmit" Color="ThemeColor.Primary" Icon="BootstrapIcon.Send" />
+	<HxSubmit Text="Odeslat" OnValidClick="HandleValidSubmit" Color="ThemeColor.Primary" Icon="BootstrapIcon.Send" />
 </EditForm>
