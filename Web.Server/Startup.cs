@@ -27,8 +27,6 @@ public class Startup
 
 		services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-		services.AddDatabaseDeveloperPageExceptionFilter();
-
 		services.AddOptions();
 
 		services.AddCustomizedMailing(configuration);

@@ -1,3 +1,20 @@
 ﻿@attribute [Route(Routes.Home)]
 
-Hello world!
+<HxRepeater Data="messages">
+	<ItemTemplate Context="item">
+		@if (item.Role == Contracts.Chat.ChatRoleStub.Assistant)
+		{
+			<div class="assistant-message">A: @item.Content</div>
+		}
+		else // user message
+		{
+			<div class="user-message">Q: @item.Content</div>
+		}
+	</ItemTemplate>
+</HxRepeater>
+
+<EditForm Model="@userMessageFormModel">
+	<DataAnnotationsValidator />
+	<HxInputText @ref="userMessageInputTextComponent" @bind-Value="userMessageFormModel.MessageText" />
+	<HxSubmit Text="Send" OnValidClick="HandleValidSubmit" Color="ThemeColor.Primary" Icon="BootstrapIcon.Send" />
+</EditForm>

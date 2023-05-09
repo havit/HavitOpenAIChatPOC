@@ -25,9 +25,6 @@ public static class ServiceCollectionExtensions
 
 		InstallConfiguration installConfiguration = new InstallConfiguration
 		{
-			DatabaseConnectionString = configuration.GetConnectionString("Database"),
-			AzureStorageConnectionString = configuration.GetConnectionString("AzureStorageConnectionString"),
-			FileStoragePathOrContainerName = fileStorageOptions.PathOrContainerName,
 			ServiceProfiles = new[] { ServiceAttribute.DefaultProfile, ServiceProfiles.WebServer },
 		};
 
@@ -39,8 +36,6 @@ public static class ServiceCollectionExtensions
 	{
 		InstallConfiguration installConfiguration = new InstallConfiguration
 		{
-			DatabaseConnectionString = configuration.GetConnectionString("Database"),
-			AzureStorageConnectionString = configuration.GetConnectionString("AzureStorageConnectionString"),
 			ServiceProfiles = new[] { ServiceAttribute.DefaultProfile, ServiceProfiles.JobsRunner }
 		};
 
@@ -61,9 +56,7 @@ public static class ServiceCollectionExtensions
 
 		InstallConfiguration installConfiguration = new InstallConfiguration
 		{
-			DatabaseConnectionString = configuration.GetConnectionString("Database"),
 			ServiceProfiles = new[] { ServiceAttribute.DefaultProfile },
-			UseInMemoryDb = useInMemoryDb,
 		};
 
 		services.AddSingleton<IConfiguration>(configuration);
