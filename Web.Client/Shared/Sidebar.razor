@@ -1,9 +1,9 @@
-﻿@using Havit.NewProjectTemplate.Web.Client.Resources
+﻿@using Havit.OpenAIChatPOC.Web.Client.Resources
 @inject INavigationLocalizer NavigationLocalizer
 
 <HxSidebar CssClass="sticky-top">
 	<HeaderTemplate>
-		<HxSidebarBrand BrandName="NewProjectTemplate" BrandNameShort="NP" />
+		<HxSidebarBrand BrandName="OpenAIChatPOC" BrandNameShort="NP" />
 	</HeaderTemplate>
 
 	<ItemsTemplate>
@@ -16,13 +16,8 @@
 		</HxSidebarItem>
 		<HxSidebarItem Text="Section 2" Icon="@BootstrapIcon.Clock" />
 		<HxSidebarItem Text="Section 3" Icon="@BootstrapIcon.Kanban" />
-        <AuthorizeView Roles="@(nameof(RoleEntry.SystemAdministrator) + "," + nameof(RoleEntry.UserSettingsAdministrator))">
-		    <HxSidebarItem Text="@NavigationLocalizer.Administration" Href="@Routes.Administration.Index" Icon="@BootstrapIcon.Gear" />
-        </AuthorizeView>
+		<HxSidebarItem Text="@NavigationLocalizer.Administration" Href="@Routes.Administration.Index" Icon="@BootstrapIcon.Gear" />
 		<HxSidebarItem Text="Development" Href="/development" Icon="@BootstrapIcon.FileCode" />
 	</ItemsTemplate>
 
-	<FooterTemplate>
-		<LoginDisplay ShowOnlyInitials="@context.SidebarCollapsed" />
-	</FooterTemplate>
 </HxSidebar>

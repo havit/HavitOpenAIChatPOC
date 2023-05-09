@@ -5,10 +5,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.DataLayer.DataEntries.Common;
+namespace Havit.OpenAIChatPOC.DataLayer.DataEntries.Common;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
 public interface IApplicationSettingsEntries : Havit.Data.Patterns.DataEntries.IDataEntries
 {
-	Havit.NewProjectTemplate.Model.Common.ApplicationSettings Current { get; }
+	Havit.OpenAIChatPOC.Model.Common.ApplicationSettings Current { get; }
 }

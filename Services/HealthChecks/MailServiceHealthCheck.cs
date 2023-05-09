@@ -1,7 +1,7 @@
-﻿using Havit.NewProjectTemplate.Services.Mailing;
+﻿using Havit.OpenAIChatPOC.Services.Mailing;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace Havit.NewProjectTemplate.Services.HealthChecks;
+namespace Havit.OpenAIChatPOC.Services.HealthChecks;
 
 public class MailServiceHealthCheck : BaseHealthCheck
 {

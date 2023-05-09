@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using Havit.NewProjectTemplate.Web.Client.Resources.Pages.Errors;
+using Havit.OpenAIChatPOC.Web.Client.Resources.Pages.Errors;
 
-namespace Havit.NewProjectTemplate.Web.Client.Pages.Errors;
+namespace Havit.OpenAIChatPOC.Web.Client.Pages.Errors;
 
 public partial class GenericError : IAsyncDisposable
 {

@@ -1,22 +1,15 @@
 ﻿using System.Globalization;
-using System.Security.Claims;
 using BlazorApplicationInsights;
 using Blazored.LocalStorage;
 using FluentValidation;
 using Havit.Blazor.Grpc.Client;
 using Havit.Blazor.Grpc.Client.ServerExceptions;
-using Havit.Blazor.Grpc.Client.WebAssembly;
-using Havit.NewProjectTemplate.Contracts;
-using Havit.NewProjectTemplate.Contracts.Infrastructure;
-using Havit.NewProjectTemplate.Contracts.Infrastructure.Security;
-using Havit.NewProjectTemplate.Web.Client.Infrastructure.Grpc;
-using Havit.NewProjectTemplate.Web.Client.Infrastructure.Security;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using Havit.OpenAIChatPOC.Contracts;
+using Havit.OpenAIChatPOC.Contracts.Infrastructure;
+using Havit.OpenAIChatPOC.Web.Client.Infrastructure.Grpc;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
-namespace Havit.NewProjectTemplate.Web.Client;
+namespace Havit.OpenAIChatPOC.Web.Client;
 
 public class Program
 {
@@ -27,7 +20,7 @@ public class Program
 		builder.RootComponents.Add<App>("app");
 
 		AddLoggingAndApplicationInsights(builder);
-		AddAuthWithHttpClient(builder);
+		AddHttpClient(builder);
 
 		builder.Services.AddBlazoredLocalStorage();
 		builder.Services.AddValidatorsFromAssemblyContaining<Dto<object>>();
@@ -35,8 +28,8 @@ public class Program
 		builder.Services.AddHxServices();
 		builder.Services.AddHxMessenger();
 		builder.Services.AddHxMessageBoxHost();
-		Havit.NewProjectTemplate.Web.Client.Resources.ResourcesServiceCollectionInstaller.AddGeneratedResourceWrappers(builder.Services);
-		Havit.NewProjectTemplate.Resources.ResourcesServiceCollectionInstaller.AddGeneratedResourceWrappers(builder.Services);
+		Havit.OpenAIChatPOC.Web.Client.Resources.ResourcesServiceCollectionInstaller.AddGeneratedResourceWrappers(builder.Services);
+		Havit.OpenAIChatPOC.Resources.ResourcesServiceCollectionInstaller.AddGeneratedResourceWrappers(builder.Services);
 		SetHxComponents();
 
 		AddGrpcClient(builder);
@@ -68,58 +61,20 @@ public class Program
 		//};
 	}
 
-	public static void AddAuthWithHttpClient(WebAssemblyHostBuilder builder)
+	public static void AddHttpClient(WebAssemblyHostBuilder builder)
 	{
-		builder.Services.AddScoped<IUserClaimsRetrievalService, UserClaimsRetrievalService>();
-		builder.Services.AddScoped(typeof(AccountClaimsPrincipalFactory<RemoteUserAccount>), typeof(CustomAccountClaimsPrincipalFactory));
-
-		builder.Services.AddHttpClient("Web.Server", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
-			.AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+		builder.Services.AddHttpClient("Web.Server", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 		builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("Web.Server"));
 
-		builder.Services
-			.AddMsalAuthentication(options =>
-			{
-				builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
-				options.UserOptions.RoleClaim = "role";
-				options.ProviderOptions.DefaultAccessTokenScopes.Add(builder.Configuration["Auth:WebServerScope"]);
-				options.ProviderOptions.LoginMode = "redirect";
-			})
-			.AddAccountClaimsPrincipalFactory<CustomAccountClaimsPrincipalFactory>();
-
-		//builder.Services.Configure<AuthorizationOptions>(config =>
-		//{
-		//	config.AddPolicy(...);
-		//});
-
-		// UserClientService uses Web.Server named HttpClient via IHttpClientFactory to break the dependecy cycle
-		// https://github.com/dotnet/aspnetcore/issues/33787
-		// https://stackoverflow.com/questions/70935768/call-api-from-accountclaimsprincipalfactory-in-blazor-wasm
-		builder.Services.AddScoped<IUserClaimsRetrievalService, UserClaimsRetrievalService>();
 	}
 
 	private static void AddGrpcClient(WebAssemblyHostBuilder builder)
 	{
 		builder.Services.AddTransient<IOperationFailedExceptionGrpcClientListener, HxMessengerOperationFailedExceptionGrpcClientListener>();
-		builder.Services.AddTransient<AuthorizationGrpcClientInterceptor>();
 
 		builder.Services.AddGrpcClientInfrastructure(assemblyToScanForDataContracts: typeof(Dto).Assembly);
 
-		builder.Services.AddGrpcClientsByApiContractAttributes(
-			typeof(IDataSeedFacade).Assembly,
-			configureGrpcClientWithAuthorization: grpcClient =>
-			{
-				grpcClient
-					.AddHttpMessageHandler(provider =>
-					{
-						return provider.GetRequiredService<AuthorizationMessageHandler>()
-							.ConfigureHandler(
-								authorizedUrls: new[] { builder.HostEnvironment.BaseAddress },
-								scopes: new[] { builder.Configuration["Auth:WebServerScope"] }
-							);
-					})
-					.AddInterceptor<AuthorizationGrpcClientInterceptor>();
-			});
+		builder.Services.AddGrpcClientsByApiContractAttributes(typeof(IMaintenanceFacade).Assembly);
 	}
 
 	private static async ValueTask SetLanguage(WebAssemblyHost webAssemblyHost)

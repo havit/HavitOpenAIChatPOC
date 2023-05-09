@@ -1,8 +1,8 @@
-﻿using Havit.NewProjectTemplate.Model.Security;
+﻿using Havit.OpenAIChatPOC.Model.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Havit.NewProjectTemplate.Entity.Configurations.Security;
+namespace Havit.OpenAIChatPOC.Entity.Configurations.Security;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {

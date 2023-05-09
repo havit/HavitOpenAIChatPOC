@@ -1,7 +1,7 @@
 ﻿using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace Havit.NewProjectTemplate.JobsRunner.Infrastructure.ApplicationInsights;
+namespace Havit.OpenAIChatPOC.JobsRunner.Infrastructure.ApplicationInsights;
 
 /// <summary>
 /// Pomáhá odlišit telemetrii hangfire jobů od http requestů webové aplikace, když obojí reportujeme jako RequestTelemetry

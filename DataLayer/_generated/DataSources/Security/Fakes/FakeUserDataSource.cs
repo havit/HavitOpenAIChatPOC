@@ -9,18 +9,18 @@ using Havit.Data.EntityFrameworkCore.Patterns.DataSources.Fakes;
 using Havit.Data.EntityFrameworkCore.Patterns.SoftDeletes;
 using Havit.Data.Patterns.Attributes;
 
-namespace Havit.NewProjectTemplate.DataLayer.DataSources.Security.Fakes;
+namespace Havit.OpenAIChatPOC.DataLayer.DataSources.Security.Fakes;
 
 [Fake]
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
-public class FakeUserDataSource : FakeDataSource<Havit.NewProjectTemplate.Model.Security.User>, Havit.NewProjectTemplate.DataLayer.DataSources.Security.IUserDataSource
+public class FakeUserDataSource : FakeDataSource<Havit.OpenAIChatPOC.Model.Security.User>, Havit.OpenAIChatPOC.DataLayer.DataSources.Security.IUserDataSource
 {
-	public FakeUserDataSource(params Havit.NewProjectTemplate.Model.Security.User[] data)
-		: this((IEnumerable<Havit.NewProjectTemplate.Model.Security.User>)data)
+	public FakeUserDataSource(params Havit.OpenAIChatPOC.Model.Security.User[] data)
+		: this((IEnumerable<Havit.OpenAIChatPOC.Model.Security.User>)data)
 	{			
 	}
 
-	public FakeUserDataSource(IEnumerable<Havit.NewProjectTemplate.Model.Security.User> data, ISoftDeleteManager softDeleteManager = null)
+	public FakeUserDataSource(IEnumerable<Havit.OpenAIChatPOC.Model.Security.User> data, ISoftDeleteManager softDeleteManager = null)
 		: base(data, softDeleteManager)
 	{
 	}

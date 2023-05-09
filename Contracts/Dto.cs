@@ -1,7 +1,7 @@
 ﻿#pragma warning disable SA1402 // File may only contain a single class
 using ProtoBuf;
 
-namespace Havit.NewProjectTemplate.Contracts;
+namespace Havit.OpenAIChatPOC.Contracts;
 
 [ProtoContract]
 public class Dto<TValue>

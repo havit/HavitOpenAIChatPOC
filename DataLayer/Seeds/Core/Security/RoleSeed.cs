@@ -1,8 +1,8 @@
 ﻿using Havit.Data.Patterns.DataSeeds;
-using Havit.NewProjectTemplate.Model.Security;
-using Havit.NewProjectTemplate.Primitives.Model.Security;
+using Havit.OpenAIChatPOC.Model.Security;
+using Havit.OpenAIChatPOC.Primitives.Model.Security;
 
-namespace Havit.NewProjectTemplate.DataLayer.Seeds.Core.Security;
+namespace Havit.OpenAIChatPOC.DataLayer.Seeds.Core.Security;
 
 public class RoleSeed : DataSeed<CoreProfile>
 {

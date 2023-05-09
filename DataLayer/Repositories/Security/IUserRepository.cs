@@ -1,6 +1,6 @@
-﻿using Havit.NewProjectTemplate.Model.Security;
+﻿using Havit.OpenAIChatPOC.Model.Security;
 
-namespace Havit.NewProjectTemplate.DataLayer.Repositories.Security;
+namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Security;
 
 public partial interface IUserRepository
 {

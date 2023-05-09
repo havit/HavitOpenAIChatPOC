@@ -1,8 +1,8 @@
-﻿using Havit.NewProjectTemplate.Model.Common;
+﻿using Havit.OpenAIChatPOC.Model.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Havit.NewProjectTemplate.Entity.Configurations.Common;
+namespace Havit.OpenAIChatPOC.Entity.Configurations.Common;
 
 public class CountryConfiguration : IEntityTypeConfiguration<Country>
 {

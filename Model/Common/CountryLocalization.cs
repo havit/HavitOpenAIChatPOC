@@ -1,7 +1,7 @@
-﻿using Havit.NewProjectTemplate.Model.Localizations;
+﻿using Havit.OpenAIChatPOC.Model.Localizations;
 using System.ComponentModel.DataAnnotations;
 
-namespace Havit.NewProjectTemplate.Model.Common;
+namespace Havit.OpenAIChatPOC.Model.Common;
 
 public class CountryLocalization : ILocalization<Country>
 {

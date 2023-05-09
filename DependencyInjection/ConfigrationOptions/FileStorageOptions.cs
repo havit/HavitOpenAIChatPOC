@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.DependencyInjection.ConfigrationOptions;
+﻿namespace Havit.OpenAIChatPOC.DependencyInjection.ConfigrationOptions;
 
 public class FileStorageOptions
 {

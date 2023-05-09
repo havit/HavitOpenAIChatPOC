@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.Model.Security;
+﻿namespace Havit.OpenAIChatPOC.Model.Security;
 
 public class UserRole
 {

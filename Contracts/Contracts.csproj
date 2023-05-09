@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<AssemblyName>Havit.NewProjectTemplate.Contracts</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.Contracts</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.Contracts</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.Contracts</RootNamespace>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 

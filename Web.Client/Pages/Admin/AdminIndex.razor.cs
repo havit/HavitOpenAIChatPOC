@@ -1,11 +1,10 @@
 ﻿using Blazored.LocalStorage;
-using Havit.NewProjectTemplate.Contracts.Infrastructure;
-using Havit.NewProjectTemplate.Web.Client.Pages.Admin.Components;
-using Havit.NewProjectTemplate.Web.Client.Resources;
-using Havit.NewProjectTemplate.Web.Client.Resources.Pages.Admin;
+using Havit.OpenAIChatPOC.Contracts.Infrastructure;
+using Havit.OpenAIChatPOC.Web.Client.Resources;
+using Havit.OpenAIChatPOC.Web.Client.Resources.Pages.Admin;
 using Microsoft.AspNetCore.Components;
 
-namespace Havit.NewProjectTemplate.Web.Client.Pages.Admin;
+namespace Havit.OpenAIChatPOC.Web.Client.Pages.Admin;
 
 public partial class AdminIndex : ComponentBase
 {
@@ -16,8 +15,6 @@ public partial class AdminIndex : ComponentBase
 	[Inject] protected INavigationLocalizer NavigationLocalizer { get; set; }
 	[Inject] protected IAdminIndexLocalizer AdmninIndexLocalizer { get; set; }
 	[Inject] protected NavigationManager NavigationManager { get; set; }
-
-	private DataSeeds dataSeedsComponent;
 
 	private async Task RemoveCultureFromLocalStorage()
 	{

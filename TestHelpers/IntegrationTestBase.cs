@@ -1,11 +1,7 @@
-﻿using Havit.Data.EntityFrameworkCore;
-using Havit.Data.Patterns.DataSeeds;
-using Havit.NewProjectTemplate.DataLayer.Seeds.Core;
-using Microsoft.EntityFrameworkCore;
+﻿using Havit.Data.Patterns.DataSeeds;
+using Havit.OpenAIChatPOC.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Havit.NewProjectTemplate.DependencyInjection;
-using Microsoft.Extensions.Configuration;
 
 namespace Havit.NewProjectTemplate.TestHelpers;
 
@@ -29,25 +25,6 @@ public class IntegrationTestBase
 			ValidateOnBuild = true,
 			ValidateScopes = true
 		});
-
-		using (var scope = serviceProvider.CreateScope())
-		{
-			var dbContext = scope.ServiceProvider.GetRequiredService<IDbContext>();
-			if (DeleteDbData)
-			{
-				dbContext.Database.EnsureDeleted();
-			}
-			if (this.UseLocalDb)
-			{
-				dbContext.Database.Migrate();
-			}
-
-			if (this.SeedData)
-			{
-				var dataSeedRunner = scope.ServiceProvider.GetRequiredService<IDataSeedRunner>();
-				dataSeedRunner.SeedData<CoreProfile>();
-			}
-		}
 
 		this.ServiceProvider = serviceProvider.CreateScope().ServiceProvider;
 	}

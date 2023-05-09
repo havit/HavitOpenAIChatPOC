@@ -1,8 +1,8 @@
 ﻿using Havit.Blazor.Grpc.Client.ServerExceptions;
-using Havit.NewProjectTemplate.Resources;
+using Havit.OpenAIChatPOC.Resources;
 using Microsoft.Extensions.Localization;
 
-namespace Havit.NewProjectTemplate.Web.Client.Infrastructure.Grpc;
+namespace Havit.OpenAIChatPOC.Web.Client.Infrastructure.Grpc;
 
 public class HxMessengerOperationFailedExceptionGrpcClientListener : IOperationFailedExceptionGrpcClientListener
 {

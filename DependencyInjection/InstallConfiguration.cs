@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.DependencyInjection;
+﻿namespace Havit.OpenAIChatPOC.DependencyInjection;
 
 internal class InstallConfiguration
 {

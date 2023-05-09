@@ -1,6 +1,6 @@
 ﻿@using Havit.Blazor.Components.Web.Bootstrap;
 @using Microsoft.AspNetCore.Components.Web
-@namespace Havit.NewProjectTemplate.Web.Server.Pages
+@namespace Havit.OpenAIChatPOC.Web.Server.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @inject IConfiguration configuration;
 @{
@@ -19,12 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="author" content="Developed by HAVIT, https://www.havit.cz" />
 
-    <title>NewProjectTemplate</title>
+    <title>OpenAIChatPOC</title>
     <base href="/" />
 
 	@Html.Raw(HxSetup.RenderBootstrapCssReference())
     <link href="_content/Havit.Blazor.Components.Web.Bootstrap/defaults.css" rel="stylesheet" asp-append-version="true" />
-    <link href="Havit.NewProjectTemplate.Web.Client.styles.css" rel="stylesheet" asp-append-version="true" /> <!-- CSS Isolation -->
+    <link href="Havit.OpenAIChatPOC.Web.Client.styles.css" rel="stylesheet" asp-append-version="true" /> <!-- CSS Isolation -->
     <link href="css/site.css" rel="stylesheet" asp-append-version="true" />
 
     <link href="manifest.json" rel="manifest" />
@@ -63,7 +63,6 @@
         <a class="dismiss">&times;</a>
     </div>
 
-    <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js" asp-append-version="true"></script>
     <script src="_framework/blazor.webassembly.js" asp-append-version="true"></script>
 	@Html.Raw(HxSetup.RenderBootstrapJavaScriptReference())
     <script src="_content/BlazorApplicationInsights/JsInterop.js" asp-append-version="true"></script>

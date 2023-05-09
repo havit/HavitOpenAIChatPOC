@@ -1,8 +1,8 @@
-using Havit.NewProjectTemplate.Contracts.Infrastructure;
-using Havit.NewProjectTemplate.Resources;
+﻿using Havit.OpenAIChatPOC.Contracts.Infrastructure;
+using Havit.OpenAIChatPOC.Resources;
 using Microsoft.AspNetCore.Components;
 
-namespace Havit.NewProjectTemplate.Web.Client;
+namespace Havit.OpenAIChatPOC.Web.Client;
 
 public partial class App
 {

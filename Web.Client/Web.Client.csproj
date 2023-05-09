@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<AssemblyName>Havit.NewProjectTemplate.Web.Client</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.Web.Client</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.Web.Client</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.Web.Client</RootNamespace>
 		<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
@@ -30,13 +30,16 @@
 		<PackageReference Include="Havit.SourceGenerators.StrongApiStringLocalizers" Version="1.0.8" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
-		<PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="7.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Contracts\Contracts.csproj" />
 		<ProjectReference Include="..\Primitives\Primitives.csproj" />
 		<ProjectReference Include="..\Resources\Resources.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\Admin\Components\" />
 	</ItemGroup>
 
 </Project>

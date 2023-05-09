@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.Model.Localizations;
+﻿namespace Havit.OpenAIChatPOC.Model.Localizations;
 
 /// <summary>
 /// Lokalizace.

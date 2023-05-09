@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Havit.NewProjectTemplate.Web.Server.Infrastructure.LoggingExtensions;
+namespace Havit.OpenAIChatPOC.Web.Server.Infrastructure.LoggingExtensions;
 
 public static class AzureWebAppDiagnosticsExtensions
 {

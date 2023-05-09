@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Havit.NewProjectTemplate.Entity.Migrations
+namespace Havit.OpenAIChatPOC.Entity.Migrations
 {
     public partial class Initial : Migration
     {

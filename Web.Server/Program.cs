@@ -1,11 +1,11 @@
 ﻿using System.Runtime.InteropServices;
-using Havit.NewProjectTemplate.Web.Server.Infrastructure.LoggingExtensions;
+using Havit.OpenAIChatPOC.Web.Server.Infrastructure.LoggingExtensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Havit.NewProjectTemplate.Web.Server;
+namespace Havit.OpenAIChatPOC.Web.Server;
 
 public class Program
 {
@@ -21,7 +21,7 @@ public class Program
 				webBuilder.UseStartup<Startup>();
 #if DEBUG
 				webBuilder.UseEnvironment("Development"); // for Red-Gate ANTS Performance Profiler
-				webBuilder.UseUrls("http://localhost:9900"); // for Red-Gate ANTS Performance Profiler
+				webBuilder.UseUrls("http://localhost:9901"); // for Red-Gate ANTS Performance Profiler
 #endif
 			})
 			.ConfigureAppConfiguration((hostContext, config) =>

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-	  <AssemblyName>Havit.NewProjectTemplate.Resources</AssemblyName>
-	  <RootNamespace>Havit.NewProjectTemplate.Resources</RootNamespace>
+	  <AssemblyName>Havit.OpenAIChatPOC.Resources</AssemblyName>
+	  <RootNamespace>Havit.OpenAIChatPOC.Resources</RootNamespace>
 	  <ImplicitUsings>true</ImplicitUsings>
   </PropertyGroup>
 

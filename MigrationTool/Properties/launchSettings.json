@@ -1,8 +1,8 @@
-{
+﻿{
   "profiles": {
     "MigrationTool": {
       "commandName": "Project",
-      "commandLineArgs": "--connectionstring \"Data Source=(localdb)\\mssqllocaldb;Initial Catalog=NewProjectTemplate;Application Name=NewProjectTemplate-MigrationTool\""
+      "commandLineArgs": "--connectionstring \"Data Source=(localdb)\\mssqllocaldb;Initial Catalog=OpenAIChatPOC;Application Name=OpenAIChatPOC-MigrationTool\""
     }
   }
 }

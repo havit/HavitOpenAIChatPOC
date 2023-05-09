@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.DataLayer.Repositories.Common;
+﻿namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Common;
 
 public partial interface ICountryLocalizationRepository
 {

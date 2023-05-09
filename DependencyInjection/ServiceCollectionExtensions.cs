@@ -1,29 +1,20 @@
 ﻿using System.IO;
 using System.Runtime.CompilerServices;
 using Azure.Identity;
-using Havit.Data.EntityFrameworkCore.Patterns.DependencyInjection;
-using Havit.Data.EntityFrameworkCore.Patterns.UnitOfWorks.EntityValidation;
 using Havit.Extensions.DependencyInjection;
 using Havit.Extensions.DependencyInjection.Abstractions;
-using Havit.NewProjectTemplate.DataLayer.DataSources.Common;
-using Havit.NewProjectTemplate.DataLayer.Repositories.Common;
-using Havit.NewProjectTemplate.DependencyInjection.ConfigrationOptions;
-using Havit.NewProjectTemplate.Entity;
-using Havit.NewProjectTemplate.Services.Infrastructure;
-using Havit.NewProjectTemplate.Services.Infrastructure.FileStorages;
-using Havit.NewProjectTemplate.Services.Infrastructure.MigrationTool;
-using Havit.NewProjectTemplate.Services.Jobs;
-using Havit.NewProjectTemplate.Services.TimeServices;
+using Havit.OpenAIChatPOC.DependencyInjection.ConfigrationOptions;
+using Havit.OpenAIChatPOC.Services.Infrastructure;
+using Havit.OpenAIChatPOC.Services.TimeServices;
 using Havit.Services.Azure.FileStorage;
 using Havit.Services.Caching;
 using Havit.Services.FileStorage;
 using Havit.Services.TimeServices;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Havit.NewProjectTemplate.DependencyInjection;
+namespace Havit.OpenAIChatPOC.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
@@ -80,58 +71,14 @@ public static class ServiceCollectionExtensions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public static IServiceCollection ConfigureForMigrationTool(this IServiceCollection services, IConfiguration configuration, bool useInMemoryDb = true)
-	{
-		InstallConfiguration installConfiguration = new InstallConfiguration
-		{
-			DatabaseConnectionString = configuration.GetConnectionString("Database"),
-			ServiceProfiles = new[] { ServiceAttribute.DefaultProfile },
-		};
-
-		InstallHavitEntityFramework(services, installConfiguration);
-		InstallHavitServices(services);
-
-		services.AddByServiceAttribute(typeof(DataLayer.Properties.AssemblyInfo).Assembly, installConfiguration.ServiceProfiles);
-		services.AddSingleton<IMigrationService, MigrationService>();
-
-		return services;
-		// there is no ConfigureForAll (migration tool needs only DataLayer and DatabaseMigrationService)
-	}
-
-	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static IServiceCollection ConfigureForAll(this IServiceCollection services, InstallConfiguration installConfiguration)
 	{
-		InstallHavitEntityFramework(services, installConfiguration);
 		InstallHavitServices(services);
 		InstallByServiceAttribute(services, installConfiguration);
-		InstallAuthorizationHandlers(services);
-		InstallFileServices(services, installConfiguration);
 
 		services.AddMemoryCache();
 
 		return services;
-	}
-
-	private static void InstallHavitEntityFramework(IServiceCollection services, InstallConfiguration configuration)
-	{
-		services.WithEntityPatternsInstaller()
-			.AddEntityPatterns()
-			//.AddLocalizationServices<Language>()
-			.AddDbContext<NewProjectTemplateDbContext>(optionsBuilder =>
-			{
-				if (configuration.UseInMemoryDb)
-				{
-					optionsBuilder.UseInMemoryDatabase(nameof(NewProjectTemplateDbContext));
-				}
-				else
-				{
-					optionsBuilder.UseSqlServer(configuration.DatabaseConnectionString, c => c.MaxBatchSize(30));
-				}
-			})
-			.AddDataLayer(typeof(IApplicationSettingsDataSource).Assembly)
-			.AddLookupService<ICountryByIsoCodeLookupService, CountryByIsoCodeLookupService>();
-
-		services.AddSingleton<IEntityValidator<object>, ValidatableObjectEntityValidator>();
 	}
 
 	private static void InstallHavitServices(IServiceCollection services)
@@ -144,23 +91,8 @@ public static class ServiceCollectionExtensions
 
 	private static void InstallByServiceAttribute(IServiceCollection services, InstallConfiguration configuration)
 	{
-		services.AddByServiceAttribute(typeof(Havit.NewProjectTemplate.DataLayer.Properties.AssemblyInfo).Assembly, configuration.ServiceProfiles);
-		services.AddByServiceAttribute(typeof(Havit.NewProjectTemplate.Services.Properties.AssemblyInfo).Assembly, configuration.ServiceProfiles);
-		services.AddByServiceAttribute(typeof(Havit.NewProjectTemplate.Facades.Properties.AssemblyInfo).Assembly, configuration.ServiceProfiles);
-	}
-
-	private static void InstallAuthorizationHandlers(IServiceCollection services)
-	{
-		services.Scan(scan => scan.FromAssemblyOf<Havit.NewProjectTemplate.Services.Properties.AssemblyInfo>()
-			.AddClasses(classes => classes.AssignableTo<IAuthorizationHandler>())
-			.As<IAuthorizationHandler>()
-			.WithScopedLifetime()
-		);
-	}
-
-	private static void InstallFileServices(IServiceCollection services, InstallConfiguration installConfiguration)
-	{
-		InstallFileStorageService<IApplicationFileStorageService, ApplicationFileStorageService, ApplicationFileStorage>(services, installConfiguration.AzureStorageConnectionString, installConfiguration.FileStoragePathOrContainerName);
+		services.AddByServiceAttribute(typeof(Havit.OpenAIChatPOC.Services.Properties.AssemblyInfo).Assembly, configuration.ServiceProfiles);
+		services.AddByServiceAttribute(typeof(Havit.OpenAIChatPOC.Facades.Properties.AssemblyInfo).Assembly, configuration.ServiceProfiles);
 	}
 
 	internal static void InstallFileStorageService<TFileStorageService, TFileStorageImplementation, TFileStorageContext>(IServiceCollection services, string azureStorageConnectionString, string storagePath)

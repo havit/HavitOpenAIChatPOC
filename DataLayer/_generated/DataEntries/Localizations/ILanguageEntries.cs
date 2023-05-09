@@ -5,11 +5,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.DataLayer.DataEntries.Localizations;
+namespace Havit.OpenAIChatPOC.DataLayer.DataEntries.Localizations;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
 public interface ILanguageEntries : Havit.Data.Patterns.DataEntries.IDataEntries
 {
-	Havit.NewProjectTemplate.Model.Localizations.Language Czech { get; }
-	Havit.NewProjectTemplate.Model.Localizations.Language English { get; }
+	Havit.OpenAIChatPOC.Model.Localizations.Language Czech { get; }
+	Havit.OpenAIChatPOC.Model.Localizations.Language English { get; }
 }

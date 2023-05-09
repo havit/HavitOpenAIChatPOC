@@ -7,9 +7,9 @@
 
 using Havit.Data.Patterns.Repositories;
 
-namespace Havit.NewProjectTemplate.DataLayer.Repositories.Common;
+namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Common;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
-public partial interface IApplicationSettingsRepository : IRepository<Havit.NewProjectTemplate.Model.Common.ApplicationSettings>
+public partial interface IApplicationSettingsRepository : IRepository<Havit.OpenAIChatPOC.Model.Common.ApplicationSettings>
 {
 }

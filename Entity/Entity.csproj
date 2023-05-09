@@ -2,13 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<AssemblyName>Havit.NewProjectTemplate.Entity</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.Entity</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.Entity</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.Entity</RootNamespace>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Havit.NewProjectTemplate.Entity.Tests" />
+		<InternalsVisibleTo Include="Havit.OpenAIChatPOC.Entity.Tests" />
 	</ItemGroup>
 
 	<ItemGroup>

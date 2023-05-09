@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Havit.NewProjectTemplate.Primitives.Model.Security;
+using Havit.OpenAIChatPOC.Primitives.Model.Security;
 
-namespace Havit.NewProjectTemplate.Model.Security;
+namespace Havit.OpenAIChatPOC.Model.Security;
 
 public class User
 {

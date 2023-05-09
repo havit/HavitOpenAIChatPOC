@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.Facades.Properties;
+﻿namespace Havit.OpenAIChatPOC.Facades.Properties;
 
 public class AssemblyInfo
 {

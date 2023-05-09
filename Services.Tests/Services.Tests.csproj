@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<IsPackable>false</IsPackable>
-		<AssemblyName>Havit.NewProjectTemplate.Services.Tests</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.Services.Tests</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.Services.Tests</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.Services.Tests</RootNamespace>
 		<PublishDir>obj\$(Configuration)\publish</PublishDir>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>

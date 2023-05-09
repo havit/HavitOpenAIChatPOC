@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.Services.Mailing;
+﻿namespace Havit.OpenAIChatPOC.Services.Mailing;
 
 public class MailingOptions
 {

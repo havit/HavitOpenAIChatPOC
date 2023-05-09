@@ -3,7 +3,7 @@ using FluentValidation;
 using FluentValidation.Resources;
 using Microsoft.Extensions.Localization;
 
-namespace Havit.NewProjectTemplate.Contracts.Infrastructure;
+namespace Havit.OpenAIChatPOC.Contracts.Infrastructure;
 public static class FluentValidationLocalizationHelper
 {
 	public static void RegisterDefaultValidationMessages(IStringLocalizer localizer)

@@ -1,8 +1,8 @@
-﻿using Havit.NewProjectTemplate.Services.Mailing;
+﻿using Havit.OpenAIChatPOC.Services.Mailing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Havit.NewProjectTemplate.Web.Server.Infrastructure.ConfigurationExtensions;
+namespace Havit.OpenAIChatPOC.Web.Server.Infrastructure.ConfigurationExtensions;
 
 public static class MailingConfig
 {

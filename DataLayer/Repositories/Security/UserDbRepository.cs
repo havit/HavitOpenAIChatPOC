@@ -1,9 +1,9 @@
 ﻿using System.Linq.Expressions;
 using Havit.Data.EntityFrameworkCore.Patterns.Repositories;
-using Havit.NewProjectTemplate.Model.Security;
+using Havit.OpenAIChatPOC.Model.Security;
 using Microsoft.EntityFrameworkCore;
 
-namespace Havit.NewProjectTemplate.DataLayer.Repositories.Security;
+namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Security;
 
 public partial class UserDbRepository : IUserRepository
 {

@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<AssemblyName>Havit.NewProjectTemplate.DataLayer</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.DataLayer</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.DataLayer</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.DataLayer</RootNamespace>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 

@@ -1,7 +1,7 @@
 ﻿using Havit.NewProjectTemplate.TestHelpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Havit.NewProjectTemplate.TestsForLocalDebugging;
+namespace Havit.OpenAIChatPOC.TestsForLocalDebugging;
 
 /// <summary>
 /// Bázový třída pro testy.

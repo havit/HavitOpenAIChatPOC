@@ -4,8 +4,8 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<AssemblyName>Havit.NewProjectTemplate.MigrationTool</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.MigrationTool</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.MigrationTool</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.MigrationTool</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

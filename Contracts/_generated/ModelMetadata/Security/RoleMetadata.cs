@@ -5,7 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.Contracts.ModelMetadata.Security;
+namespace Havit.OpenAIChatPOC.Contracts.ModelMetadata.Security;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
 public static class RoleMetadata

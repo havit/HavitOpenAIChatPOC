@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Havit.NewProjectTemplate.Web.Server.Infrastructure.LoggingExtensions;
+namespace Havit.OpenAIChatPOC.Web.Server.Infrastructure.LoggingExtensions;
 
 /// <summary>
 /// Upraví logování do File / Azure Blob Storage tak, aby ignorovalo nastavení úrovně logování v Azure portalu (Error, Warning, Information, Verbose).

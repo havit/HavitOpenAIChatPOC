@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace Havit.NewProjectTemplate.Entity;
+namespace Havit.OpenAIChatPOC.Entity;
 
-public class NewProjectTemplateDesignTimeDbContextFactory : IDesignTimeDbContextFactory<NewProjectTemplateDbContext>
+public class OpenAIChatPOCDesignTimeDbContextFactory : IDesignTimeDbContextFactory<OpenAIChatPOCDbContext>
 {
-	public NewProjectTemplateDbContext CreateDbContext(string[] args)
+	public OpenAIChatPOCDbContext CreateDbContext(string[] args)
 	{
 		// Příkazy pro tooling EF Core Migrations (Add-Migration, ...) tooling získávají DbContext z této metody.
 		// Stejně tak  CodeGenerator.
@@ -25,6 +25,6 @@ public class NewProjectTemplateDesignTimeDbContextFactory : IDesignTimeDbContext
 
 		string connectionString = configuration.GetConnectionString("Database");
 
-		return new NewProjectTemplateDbContext(new DbContextOptionsBuilder<NewProjectTemplateDbContext>().UseSqlServer(connectionString).Options);
+		return new OpenAIChatPOCDbContext(new DbContextOptionsBuilder<OpenAIChatPOCDbContext>().UseSqlServer(connectionString).Options);
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using Havit.Services.TimeServices;
 
-namespace Havit.NewProjectTemplate.Services.TimeServices;
+namespace Havit.OpenAIChatPOC.Services.TimeServices;
 
 /// <summary>
 /// Provides current time in local time-zone ("Central Europe Standard Time", "Europe/Prague" for non-Windows platforms).

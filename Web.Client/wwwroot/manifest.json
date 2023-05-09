@@ -1,6 +1,6 @@
 ﻿{
-	"name": "NewProjectTemplate",
-	"short_name": "NewProjectTemplate",
+	"name": "OpenAIChatPOC",
+	"short_name": "OpenAIChatPOC",
 	"start_url": "./",
 	"display": "standalone",
 	"background_color": "#ffffff",

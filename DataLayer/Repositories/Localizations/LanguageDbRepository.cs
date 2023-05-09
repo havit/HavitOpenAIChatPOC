@@ -1,4 +1,4 @@
-﻿namespace Havit.NewProjectTemplate.DataLayer.Repositories.Localizations;
+﻿namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Localizations;
 
 public partial class LanguageDbRepository : ILanguageRepository
 {

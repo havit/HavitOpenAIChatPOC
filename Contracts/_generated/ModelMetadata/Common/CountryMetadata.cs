@@ -5,7 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.Contracts.ModelMetadata.Common;
+namespace Havit.OpenAIChatPOC.Contracts.ModelMetadata.Common;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
 public static class CountryMetadata

@@ -5,18 +5,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.DataLayer.DataEntries.Localizations;
+namespace Havit.OpenAIChatPOC.DataLayer.DataEntries.Localizations;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
-public class LanguageEntries : Havit.Data.Patterns.DataEntries.DataEntries<Havit.NewProjectTemplate.Model.Localizations.Language>, ILanguageEntries 
+public class LanguageEntries : Havit.Data.Patterns.DataEntries.DataEntries<Havit.OpenAIChatPOC.Model.Localizations.Language>, ILanguageEntries 
 {
-	private Havit.NewProjectTemplate.Model.Localizations.Language czech;
-	private Havit.NewProjectTemplate.Model.Localizations.Language english;
+	private Havit.OpenAIChatPOC.Model.Localizations.Language czech;
+	private Havit.OpenAIChatPOC.Model.Localizations.Language english;
 
-	public Havit.NewProjectTemplate.Model.Localizations.Language Czech => czech ??= GetEntry(Havit.NewProjectTemplate.Model.Localizations.Language.Entry.Czech);
-	public Havit.NewProjectTemplate.Model.Localizations.Language English => english ??= GetEntry(Havit.NewProjectTemplate.Model.Localizations.Language.Entry.English);
+	public Havit.OpenAIChatPOC.Model.Localizations.Language Czech => czech ??= GetEntry(Havit.OpenAIChatPOC.Model.Localizations.Language.Entry.Czech);
+	public Havit.OpenAIChatPOC.Model.Localizations.Language English => english ??= GetEntry(Havit.OpenAIChatPOC.Model.Localizations.Language.Entry.English);
 
-	public LanguageEntries(Havit.NewProjectTemplate.DataLayer.Repositories.Localizations.ILanguageRepository repository)
+	public LanguageEntries(Havit.OpenAIChatPOC.DataLayer.Repositories.Localizations.ILanguageRepository repository)
 		: base(repository)
 	{
 	}

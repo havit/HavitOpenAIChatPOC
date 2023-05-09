@@ -9,18 +9,18 @@ using Havit.Data.EntityFrameworkCore.Patterns.DataSources.Fakes;
 using Havit.Data.EntityFrameworkCore.Patterns.SoftDeletes;
 using Havit.Data.Patterns.Attributes;
 
-namespace Havit.NewProjectTemplate.DataLayer.DataSources.Localizations.Fakes;
+namespace Havit.OpenAIChatPOC.DataLayer.DataSources.Localizations.Fakes;
 
 [Fake]
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
-public class FakeLanguageDataSource : FakeDataSource<Havit.NewProjectTemplate.Model.Localizations.Language>, Havit.NewProjectTemplate.DataLayer.DataSources.Localizations.ILanguageDataSource
+public class FakeLanguageDataSource : FakeDataSource<Havit.OpenAIChatPOC.Model.Localizations.Language>, Havit.OpenAIChatPOC.DataLayer.DataSources.Localizations.ILanguageDataSource
 {
-	public FakeLanguageDataSource(params Havit.NewProjectTemplate.Model.Localizations.Language[] data)
-		: this((IEnumerable<Havit.NewProjectTemplate.Model.Localizations.Language>)data)
+	public FakeLanguageDataSource(params Havit.OpenAIChatPOC.Model.Localizations.Language[] data)
+		: this((IEnumerable<Havit.OpenAIChatPOC.Model.Localizations.Language>)data)
 	{			
 	}
 
-	public FakeLanguageDataSource(IEnumerable<Havit.NewProjectTemplate.Model.Localizations.Language> data, ISoftDeleteManager softDeleteManager = null)
+	public FakeLanguageDataSource(IEnumerable<Havit.OpenAIChatPOC.Model.Localizations.Language> data, ISoftDeleteManager softDeleteManager = null)
 		: base(data, softDeleteManager)
 	{
 	}

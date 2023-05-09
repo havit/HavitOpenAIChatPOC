@@ -1,19 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Havit.NewProjectTemplate.Entity.Tests;
+namespace Havit.OpenAIChatPOC.Entity.Tests;
 
 [TestClass]
-public class NewProjectTemplateDbContextTests
+public class OpenAIChatPOCDbContextTests
 {
 	[TestMethod]
-	public void NewProjectTemplateDbContext_CheckModelConventions()
+	public void OpenAIChatPOCDbContext_CheckModelConventions()
 	{
 		// Arrange
-		DbContextOptions<NewProjectTemplateDbContext> options = new DbContextOptionsBuilder<NewProjectTemplateDbContext>()
-			.UseInMemoryDatabase(nameof(NewProjectTemplateDbContext))
+		DbContextOptions<OpenAIChatPOCDbContext> options = new DbContextOptionsBuilder<OpenAIChatPOCDbContext>()
+			.UseInMemoryDatabase(nameof(OpenAIChatPOCDbContext))
 			.Options;
-		NewProjectTemplateDbContext dbContext = new NewProjectTemplateDbContext(options);
+		OpenAIChatPOCDbContext dbContext = new OpenAIChatPOCDbContext(options);
 
 		// Act
 		Havit.Data.EntityFrameworkCore.ModelValidation.ModelValidator modelValidator = new Havit.Data.EntityFrameworkCore.ModelValidation.ModelValidator();

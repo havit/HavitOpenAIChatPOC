@@ -2,13 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
-		<AssemblyName>Havit.NewProjectTemplate.Services</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.Services</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.Services</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.Services</RootNamespace>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Havit.NewProjectTemplate.Services.Tests" />
+		<InternalsVisibleTo Include="Havit.OpenAIChatPOC.Services.Tests" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -18,12 +18,11 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="7.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Contracts\Contracts.csproj" />
-		<ProjectReference Include="..\DataLayer\DataLayer.csproj" />
-		<ProjectReference Include="..\Model\Model.csproj" />
 		<ProjectReference Include="..\Primitives\Primitives.csproj" />
 	</ItemGroup>
 </Project>	 

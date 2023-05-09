@@ -1,7 +1,7 @@
 ﻿
-using Havit.NewProjectTemplate.Model.Common;
+using Havit.OpenAIChatPOC.Model.Common;
 
-namespace Havit.NewProjectTemplate.DataLayer.Repositories.Common;
+namespace Havit.OpenAIChatPOC.DataLayer.Repositories.Common;
 
 public interface ICountryByIsoCodeLookupService
 {

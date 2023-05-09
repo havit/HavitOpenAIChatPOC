@@ -3,7 +3,7 @@ using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace Havit.NewProjectTemplate.Web.Server.Infrastructure.ApplicationInsights;
+namespace Havit.OpenAIChatPOC.Web.Server.Infrastructure.ApplicationInsights;
 
 /// <summary>
 /// Application Insights telemetry initializer responsible for setting gRPC requests as failed (based on grpc-status HTTP Header).

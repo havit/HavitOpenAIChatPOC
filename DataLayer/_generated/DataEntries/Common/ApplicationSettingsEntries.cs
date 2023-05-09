@@ -5,16 +5,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Havit.NewProjectTemplate.DataLayer.DataEntries.Common;
+namespace Havit.OpenAIChatPOC.DataLayer.DataEntries.Common;
 
 [System.CodeDom.Compiler.GeneratedCode("Havit.Data.EntityFrameworkCore.CodeGenerator", "1.0")]
-public class ApplicationSettingsEntries : Havit.Data.Patterns.DataEntries.DataEntries<Havit.NewProjectTemplate.Model.Common.ApplicationSettings>, IApplicationSettingsEntries 
+public class ApplicationSettingsEntries : Havit.Data.Patterns.DataEntries.DataEntries<Havit.OpenAIChatPOC.Model.Common.ApplicationSettings>, IApplicationSettingsEntries 
 {
-	private Havit.NewProjectTemplate.Model.Common.ApplicationSettings current;
+	private Havit.OpenAIChatPOC.Model.Common.ApplicationSettings current;
 
-	public Havit.NewProjectTemplate.Model.Common.ApplicationSettings Current => current ??= GetEntry(Havit.NewProjectTemplate.Model.Common.ApplicationSettings.Entry.Current);
+	public Havit.OpenAIChatPOC.Model.Common.ApplicationSettings Current => current ??= GetEntry(Havit.OpenAIChatPOC.Model.Common.ApplicationSettings.Entry.Current);
 
-	public ApplicationSettingsEntries(Havit.NewProjectTemplate.DataLayer.Repositories.Common.IApplicationSettingsRepository repository)
+	public ApplicationSettingsEntries(Havit.OpenAIChatPOC.DataLayer.Repositories.Common.IApplicationSettingsRepository repository)
 		: base(repository)
 	{
 	}

@@ -1,14 +1,10 @@
 ﻿using Havit.Extensions.DependencyInjection.Abstractions;
-using Havit.NewProjectTemplate.Contracts.Infrastructure;
-using Havit.NewProjectTemplate.Model.Security;
-using Havit.NewProjectTemplate.Primitives.Model.Security;
+using Havit.OpenAIChatPOC.Contracts.Infrastructure;
 using Havit.Services.Caching;
-using Microsoft.AspNetCore.Authorization;
 
-namespace Havit.NewProjectTemplate.Facades.Infrastructure;
+namespace Havit.OpenAIChatPOC.Facades.Infrastructure;
 
 [Service]
-[Authorize(Roles = nameof(RoleEntry.SystemAdministrator))]
 public class MaintenanceFacade : IMaintenanceFacade
 {
 	private readonly ICacheService cacheService;

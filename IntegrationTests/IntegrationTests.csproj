@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<IsPackable>false</IsPackable>
-		<AssemblyName>Havit.NewProjectTemplate.IntegrationTests</AssemblyName>
-		<RootNamespace>Havit.NewProjectTemplate.IntegrationTests</RootNamespace>
+		<AssemblyName>Havit.OpenAIChatPOC.IntegrationTests</AssemblyName>
+		<RootNamespace>Havit.OpenAIChatPOC.IntegrationTests</RootNamespace>
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 
@@ -15,10 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\DataLayer\DataLayer.csproj" />
-		<ProjectReference Include="..\Facades\Facades.csproj" />
 		<ProjectReference Include="..\DependencyInjection\DependencyInjection.csproj" />
-		<ProjectReference Include="..\Model\Model.csproj" />
 		<ProjectReference Include="..\TestHelpers\TestHelpers.csproj" />
 	</ItemGroup>
 
