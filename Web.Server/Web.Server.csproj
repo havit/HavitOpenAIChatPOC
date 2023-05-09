@@ -37,27 +37,10 @@
 		<ProjectReference Include="..\Web.Client\Web.Client.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Controllers\" />
-	</ItemGroup>
-
 	<Target Name="TfsPublish" AfterTargets="AfterPublish" Condition="'$(PublishDirectory)' != ''">
 		<ItemGroup>
 			<PublishToCopy Include="obj\Release\TfsPublish\*.zip" />
 		</ItemGroup>
 		<Copy SourceFiles="@(PublishToCopy)" DestinationFolder="$(PublishDirectory)\Web" />
-	</Target>
-
-	<Target Name="EnsureWebJobInPackage" AfterTargets="CreateReadyToRunImages" BeforeTargets="_PrepareForReadyToRunCompilation">
-		<Error Text="WebJob file Havit.OpenAIChatPOC.JobsRunner.exe not found when preparing web deploy package." Condition="!Exists('..\JobsRunner\bin\Release\net7.0\Havit.OpenAIChatPOC.JobsRunner.exe')" />
-		<ItemGroup>
-			<!-- Pick files for publish. Assumes that JobsRunner is referenced by Web.Server in SLN. -->
-			<WebJobFiles Include="..\JobsRunner\bin\Release\net7.0\**" />
-			<!-- Add files to ResolvedFileToPublish with path where they should belong (webjobs folder). -->
-			<ResolvedFileToPublish Include="@(WebJobFiles)">
-				<RelativePath>app_data\jobs\continuous\JobsRunner\%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
-				<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-			</ResolvedFileToPublish>
-		</ItemGroup>
 	</Target>
 </Project>

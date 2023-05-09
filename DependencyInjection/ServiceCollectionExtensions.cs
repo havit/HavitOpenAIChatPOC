@@ -32,17 +32,6 @@ public static class ServiceCollectionExtensions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public static IServiceCollection ConfigureForJobsRunner(this IServiceCollection services, IConfiguration configuration)
-	{
-		InstallConfiguration installConfiguration = new InstallConfiguration
-		{
-			ServiceProfiles = new[] { ServiceAttribute.DefaultProfile, ServiceProfiles.JobsRunner }
-		};
-
-		return services.ConfigureForAll(installConfiguration);
-	}
-
-	[MethodImpl(MethodImplOptions.NoInlining)]
 	public static IServiceCollection ConfigureForTests(this IServiceCollection services, bool useInMemoryDb = true)
 	{
 		string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Developement";
