@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<AssemblyName>Havit.NewProjectTemplate.DataLayer</AssemblyName>
+		<RootNamespace>Havit.NewProjectTemplate.DataLayer</RootNamespace>
+		<ImplicitUsings>true</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Havit.Data.EntityFrameworkCore.CodeGenerator" Version="2.7.1" />
+		<PackageReference Include="Havit.Data.EntityFrameworkCore.Patterns" Version="2.7.3" />
+		<PackageReference Include="Havit.Extensions.DependencyInjection.Abstractions" Version="2.0.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Contracts\Contracts.csproj" />
+		<ProjectReference Include="..\Entity\Entity.csproj" />
+		<ProjectReference Include="..\Model\Model.csproj" />
+		<ProjectReference Include="..\Primitives\Primitives.csproj" />
+	</ItemGroup>
+
+</Project>

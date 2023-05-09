@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+<div class="login-display d-flex align-items-center w-100">
+	<AuthorizeView>
+		<Authorized>
+			<HxDropdown>
+				<HxDropdownToggleElement ElementName="div" CssClass="d-flex align-items-center" role="button">
+					<div class="initials bg-primary bg-opacity-10 text-primary rounded-circle p-1">
+						@NameToInitials(@context.User?.Identity?.Name)
+					</div>
+					@if (!ShowOnlyInitials)
+					{
+						<div class="login-display-nickname text-primary mx-2 text-truncate">
+							@context?.User?.Identity?.Name
+						</div>
+					}
+				</HxDropdownToggleElement>
+				<HxDropdownMenu>
+					<CultureSelector />
+					<HxDropdownItem OnClick="BeginSignOut">Log out</HxDropdownItem>
+				</HxDropdownMenu>
+			</HxDropdown>
+		</Authorized>
+		<NotAuthorized>
+			<span><a href="authentication/login">Log in</a></span>
+		</NotAuthorized>
+	</AuthorizeView>
+</div>
