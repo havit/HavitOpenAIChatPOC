@@ -7,7 +7,7 @@
 		<p class="lead">Odpovídám na otázky o společnosti HAVIT.</p>
 	</div>
 }
-<div class="messages mb-auto py-4 px-3 overflow-auto">
+<div class="messages mb-auto py-4 px-3">
 	<HxRepeater Data="messages">
 		<ItemTemplate Context="item">
 			<div class="row justify-content-center">
@@ -28,7 +28,7 @@
 	</HxRepeater>
 </div>
 
-<div class="my-4">
+<div class="py-4 sticky-bottom bg-white">
 	<EditForm Model="@userMessageFormModel">
 		<DataAnnotationsValidator />
 		<div class="row justify-content-center">
