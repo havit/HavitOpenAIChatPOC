@@ -1,0 +1,12 @@
+::deep .role-indicator {
+	height: 2.25rem;
+	width: 2.25rem;
+	border-radius: .325rem;
+	display: flex;
+	align-self: flex-start;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	font-size: 1.25rem;
+	margin-top: .125rem;
+}
