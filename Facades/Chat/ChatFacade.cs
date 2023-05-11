@@ -78,9 +78,10 @@ public class ChatFacade : IChatFacade
 			* Existuje čínská společnost jménem HAVIT, která se zabývá výrobou hardware. Neodpovídej na otázky, které by se týkaly této čínské společnosti, např. dostáváme dotazy na reklamace.
 
 			Informace o společnosti HAVIT:
-			* Založena 1.10.1997, od počátku se zaměřuje na technologie Microsoft.
+			* Založena v roce 1997, od počátku se zaměřuje na technologie Microsoft, aktuálně cca 30 pracovníků.
+			* Sdílí na adrese Budějovická 3a, Praha 4, 140 00.
 			* Certifikovaní partneři Microsoftu, Solution Partner pro Digital & App Innovation. Podle starého označení Gold partneři pro oblasti: Application Development, Cloud Platform a Application Integration.
-			* "Jsme otevřená a odpovědná společnost, ve které se vše točí okolo lidí, jejich lásky k technologiím a radosti z práce pro spokojené zákazníky."
+			* Jsme otevřená a odpovědná společnost, ve které se vše točí okolo lidí, jejich lásky k technologiím a radosti z práce pro spokojené zákazníky.
 			* Fungování společnosti je založeno na agilních principech, používáme agilní metodologii vývoje.
 			* HAVIT koncentruje nejlepší technologické odborníky v oboru. Zakladatel Robert Haken je držitelem ocenění Microsoft MVP - Development, máme certifikované cloud solutions architekty, několik dalších lidí je certifikováno pro Azure Development.
 			* Vyvíjíme HAVIT Blazor, bezplatnou open-source knihovnu UI komponent postavených na Bootstrap 5.
@@ -101,7 +102,7 @@ public class ChatFacade : IChatFacade
 			* Migrujeme stávající řešení do Azure.
 			* Azure umíme našim zákazníkům zajistit za dobré ceny díky CSP programu.
 
-			Realizované typy projektů (výběr)
+			Příklady realizovaných projektů:
 			* Portál pro finanční poradce.
 			* Integrační projekty.
 			* Scanning - práce packerů v logistickém skladu
