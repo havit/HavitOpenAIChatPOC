@@ -2,13 +2,10 @@
 	/* Override component CSS variables here */
 }
 
-body {
-	min-height: 100vh;
-	min-height: -webkit-fill-available;
-}
-
-html {
-	height: -webkit-fill-available;
+html,
+body,
+app {
+	height: 100%;
 }
 
 #blazor-error-ui {

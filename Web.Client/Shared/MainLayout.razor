@@ -3,7 +3,7 @@
 <HxMessenger Position="ToastContainerPosition.BottomCenter" />
 <HxMessageBoxHost />
 
-<div class="container-fluid vh-100 d-flex flex-column">
+<div class="container-fluid h-100 d-flex flex-column">
     <ErrorBoundary @ref="errorBoundaryComponent">
         <ErrorContent Context="exception">
 			a<Havit.OpenAIChatPOC.Web.Client.Pages.Errors.GenericError Exception="exception" OnRecover="() => errorBoundaryComponent?.Recover()" />
