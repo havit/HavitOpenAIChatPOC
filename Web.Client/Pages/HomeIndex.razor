@@ -34,7 +34,7 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<div class="position-relative">
-					<HxInputText @ref="userMessageInputTextComponent" @bind-Value="userMessageFormModel.MessageText" />
+					<HxInputText @ref="userMessageInputTextComponent" InputCssClass="pe-5" @bind-Value="userMessageFormModel.MessageText" />
 					<HxSubmit OnValidClick="HandleValidSubmit" Size="ButtonSize.Small" CssClass="position-absolute top-50 end-0 translate-middle-y me-1" Color="ThemeColor.Primary" Icon="BootstrapIcon.Send" />
 				</div>
 			</div>
