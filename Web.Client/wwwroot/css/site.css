@@ -2,6 +2,15 @@
 	/* Override component CSS variables here */
 }
 
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+}
+
+html {
+	height: -webkit-fill-available;
+}
+
 #blazor-error-ui {
 	background: lightyellow;
 	bottom: 0;
@@ -14,9 +23,9 @@
 	z-index: 10000;
 }
 
-	#blazor-error-ui .dismiss {
-		cursor: pointer;
-		position: absolute;
-		right: 0.75rem;
-		top: 0.5rem;
-	}
+#blazor-error-ui .dismiss {
+	cursor: pointer;
+	position: absolute;
+	right: 0.75rem;
+	top: 0.5rem;
+}
