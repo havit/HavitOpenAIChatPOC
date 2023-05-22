@@ -66,5 +66,13 @@
     <script src="_framework/blazor.webassembly.js" asp-append-version="true"></script>
 	@Html.Raw(HxSetup.RenderBootstrapJavaScriptReference())
     <script src="_content/BlazorApplicationInsights/JsInterop.js" asp-append-version="true"></script>
+	<script type="text/javascript">
+		window.scrollToElementId = (elementId) => {
+			var element = document.getElementById(elementId);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+	</script>
 </body>
 </html>

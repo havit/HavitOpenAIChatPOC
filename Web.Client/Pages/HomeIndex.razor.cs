@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Havit.OpenAIChatPOC.Contracts.Chat;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace Havit.OpenAIChatPOC.Web.Client.Pages;
 
 public partial class HomeIndex
 {
 	[Inject] protected IChatFacade ChatFacade { get; set; }
+	[Inject] protected IJSRuntime JSRuntime { get; set; }
 
 	private List<ChatMessageDto> messages = new();
 	private FormModel userMessageFormModel = new();
@@ -14,6 +16,10 @@ public partial class HomeIndex
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
+		if (messages.Any())
+		{
+			await JSRuntime.InvokeVoidAsync("scrollToElementId", $"message-{messages.Count - 1}");
+		}
 		await userMessageInputTextComponent.FocusAsync();
 	}
 

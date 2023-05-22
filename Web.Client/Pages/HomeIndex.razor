@@ -1,32 +1,32 @@
 ﻿@attribute [Route(Routes.Home)]
 
-@if(!messages.Any()) {
+@if (!messages.Any())
+{
 	<div class="m-auto text-center align-self-center">
-		<HxIcon CssClass="display-1 text-primary" Icon="BootstrapIcon.Robot"/>
+		<HxIcon CssClass="display-1 text-primary" Icon="BootstrapIcon.Robot" />
 		<h4>Jsem Adam, umělá inteligence postavená jako technologické demo Azure&nbsp;OpenAI.</h4>
 		<p class="lead">Odpovídám na otázky o společnosti HAVIT.</p>
 		<p><a href="https://github.com/havit/HavitOpenAIChatPOC/blob/master/Facades/Chat/ChatFacade.cs">https://github.com/havit/HavitOpenAIChatPOC</a></p>
 	</div>
 }
 <div class="messages mb-auto py-4 px-3">
-	<HxRepeater Data="messages">
-		<ItemTemplate Context="item">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 d-flex gap-3 mb-4">
-					@if (item.Role == Contracts.Chat.ChatRoleStub.Assistant)
-					{
-						<HxIcon CssClass="role-indicator bg-primary bg-opacity-10 text-primary" Icon="BootstrapIcon.Robot"/>
-						<p class="assistant-message">@item.Content</p>
-					}
-					else // user message
-					{
-						<HxIcon CssClass="role-indicator bg-success bg-opacity-10 text-success" Icon="BootstrapIcon.PersonCircle"/>
-						<p class="user-message">@item.Content</p>
-					}
-				</div>
+	@for (int i = 0; i < messages.Count; i++)
+	{
+		<div @key="i" id="@($"message-{i}")" class="row justify-content-center">
+			<div class="col-lg-6 d-flex gap-3 mb-4">
+				@if (messages[i].Role == Contracts.Chat.ChatRoleStub.Assistant)
+				{
+					<HxIcon CssClass="role-indicator bg-primary bg-opacity-10 text-primary" Icon="BootstrapIcon.Robot" />
+					<p class="assistant-message">@messages[i].Content</p>
+				}
+				else // user message
+				{
+					<HxIcon CssClass="role-indicator bg-success bg-opacity-10 text-success" Icon="BootstrapIcon.PersonCircle" />
+					<p class="user-message">@messages[i].Content</p>
+				}
 			</div>
-		</ItemTemplate>
-	</HxRepeater>
+		</div>
+	}
 </div>
 
 <div class="py-4 sticky-bottom bg-white">
