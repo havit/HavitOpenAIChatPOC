@@ -22,6 +22,16 @@
     <title>OpenAIChatPOC</title>
     <base href="/" />
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9SBCEG2LB6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-9SBCEG2LB6');
+	</script>
+
 	@Html.Raw(HxSetup.RenderBootstrapCssReference())
     <link href="_content/Havit.Blazor.Components.Web.Bootstrap/defaults.css" rel="stylesheet" asp-append-version="true" />
     <link href="Havit.OpenAIChatPOC.Web.Client.styles.css" rel="stylesheet" asp-append-version="true" /> <!-- CSS Isolation -->
