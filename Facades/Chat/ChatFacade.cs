@@ -24,9 +24,10 @@ public class ChatFacade : IChatFacade
 
 		ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
 		{
+			DeploymentName = "HakenOAIGpt35TurboDeployment",
 			Messages =
 			{
-				new ChatMessage(ChatRole.System, GetSystemMessage())
+				new ChatRequestSystemMessage(GetSystemMessage())
 			},
 			Temperature = (float)0.7,
 			MaxTokens = 800,
@@ -40,10 +41,10 @@ public class ChatFacade : IChatFacade
 			switch (message.Role)
 			{
 				case ChatRoleStub.User:
-					chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, message.Content));
+					chatCompletionsOptions.Messages.Add(new ChatRequestUserMessage(message.Content));
 					break;
 				case ChatRoleStub.Assistant:
-					chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.Assistant, message.Content));
+					chatCompletionsOptions.Messages.Add(new ChatRequestAssistantMessage(message.Content));
 					break;
 				default:
 					throw new InvalidOperationException($"Unknown ChatRole value {message.Role}");
@@ -51,7 +52,6 @@ public class ChatFacade : IChatFacade
 		}
 
 		Response<ChatCompletions> responseWithoutStream = await client.GetChatCompletionsAsync(
-			"HakenOAIGpt35TurboDeployment",
 			chatCompletionsOptions,
 			cancellationToken);
 
